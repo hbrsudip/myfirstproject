@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    // Handle Postfix Selection
     $("#postfix").change(function() {
         let postfix = $(this).val();
         $.post("/process_postfix", JSON.stringify({ postfix }), function(response) {
@@ -13,6 +14,7 @@ $(document).ready(function() {
         }, "json");
     });
 
+    // Handle Variant Selection
     $("#variant").change(function() {
         let variant = $(this).val();
         $.post("/process_variant", JSON.stringify({ variant }), function(response) {
@@ -27,6 +29,7 @@ $(document).ready(function() {
         }, "json");
     });
 
+    // Create SN Sheet
     $("#create-sn-sheet").click(function() {
         let postfix = $("#postfix").val();
         let variant = $("#variant").val();
@@ -35,6 +38,7 @@ $(document).ready(function() {
         }, "json");
     });
 
+    // Create Mapping Sheets
     $("#create-mapping-sheets").click(function() {
         let selectedVariants = $("#variant-list").val();
         $.post("/create_mapping_sheet", JSON.stringify({ selected_variants: selectedVariants }), function(response) {
