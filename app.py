@@ -206,7 +206,8 @@ def main():
 
 @app.route("/")
 def home():
-    return jsonify(message="Hello, Flask on Vercel!")
+    return main()
+    #return jsonify(message="Hello, Flask on Vercel!")
 
 if __name__ == "__main__":
     app.run()
