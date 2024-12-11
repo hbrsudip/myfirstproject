@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SN and Mapping Sheet Tool</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SN and Mapping Sheet Tool</h1>
+        <div class="group">
+            <label for="postfix">Select Postfix:</label>
+            <select id="postfix">
+                <option value="">Select</option>
+                <option value="_ETSYS">_ETSYS</option>
+                <option value="_SABAL">_SABAL</option>
+                <option value="_SABIN">_SABIN</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div class="group">
+            <label for="variant">Select Variant:</label>
+            <select id="variant">
+                <option value="">Select</option>
+                <option value="GA">GA</option>
+                <option value="GD">GD</option>
+                <option value="GX">GX</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <button id="create-sn-sheet">Create SN Creation Sheet</button>
+
+        <div class="group">
+            <label for="variant-list">Select Multiple Variants:</label>
+            <select id="variant-list" multiple>
+                <option value="GA">GA</option>
+                <option value="GD">GD</option>
+                <option value="GX">GX</option>
+                <option value="GY">GY</option>
+                <option value="GZ">GZ</option>
+                <option value="more">more</option>
+            </select>
+        </div>
+        <button id="create-mapping-sheets">Create Mapping Sheets</button>
+
+        <div id="output"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/static/app.js"></script>
+</body>
+</html>
