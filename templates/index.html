@@ -5,47 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SN and Mapping Sheet Tool</title>
     <link rel="stylesheet" href="/static/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>SN and Mapping Sheet Tool</h1>
-        <div class="group">
-            <label for="postfix">Select Postfix:</label>
-            <select id="postfix">
-                <option value="">Select</option>
-                <option value="_ETSYS">_ETSYS</option>
-                <option value="_SABAL">_SABAL</option>
-                <option value="_SABIN">_SABIN</option>
-                <option value="Other">Other</option>
-            </select>
-        </div>
-        <div class="group">
-            <label for="variant">Select Variant:</label>
-            <select id="variant">
-                <option value="">Select</option>
-                <option value="GA">GA</option>
-                <option value="GD">GD</option>
-                <option value="GX">GX</option>
-                <option value="Other">Other</option>
-            </select>
-        </div>
-        <button id="create-sn-sheet">Create SN Creation Sheet</button>
+        <header>
+            <h1>SN and Mapping Sheet Tool</h1>
+        </header>
+        <main>
+            <!-- Postfix Selection -->
+            <section class="form-group">
+                <label for="postfix">Select Postfix:</label>
+                <select id="postfix" class="input-field">
+                    <option value="">Select</option>
+                    <option value="_ETSYS">_ETSYS</option>
+                    <option value="_SABAL">_SABAL</option>
+                    <option value="_SABIN">_SABIN</option>
+                    <option value="Other">Other</option>
+                </select>
+            </section>
 
-        <div class="group">
-            <label for="variant-list">Select Multiple Variants:</label>
-            <select id="variant-list" multiple>
-                <option value="GA">GA</option>
-                <option value="GD">GD</option>
-                <option value="GX">GX</option>
-                <option value="GY">GY</option>
-                <option value="GZ">GZ</option>
-                <option value="more">more</option>
-            </select>
-        </div>
-        <button id="create-mapping-sheets">Create Mapping Sheets</button>
+            <!-- Variant Selection -->
+            <section class="form-group">
+                <label for="variant">Select Variant:</label>
+                <select id="variant" class="input-field">
+                    <option value="">Select</option>
+                    <option value="GA">GA</option>
+                    <option value="GD">GD</option>
+                    <option value="GX">GX</option>
+                    <option value="Other">Other</option>
+                </select>
+            </section>
 
-        <div id="output"></div>
+            <!-- SN Creation Button -->
+            <button id="create-sn-sheet" class="btn">Create SN Creation Sheet</button>
+
+            <!-- Multi-Selection Variants -->
+            <section class="form-group">
+                <label for="variant-list">Select Multiple Variants:</label>
+                <select id="variant-list" class="input-field" multiple>
+                    <option value="GA">GA</option>
+                    <option value="GD">GD</option>
+                    <option value="GX">GX</option>
+                    <option value="GY">GY</option>
+                    <option value="GZ">GZ</option>
+                    <option value="more">more</option>
+                </select>
+            </section>
+
+            <!-- Mapping Sheets Button -->
+            <button id="create-mapping-sheets" class="btn">Create Mapping Sheets</button>
+
+            <!-- Output Display -->
+            <section id="output" class="output-box">
+                <p>Output will appear here...</p>
+            </section>
+        </main>
+        <footer>
+            <p>© 2024 SN and Mapping Tool. All Rights Reserved.</p>
+        </footer>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/static/app.js"></script>
 </body>
