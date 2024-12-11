@@ -30,13 +30,18 @@ def process_variant():
     variant_path = {'GA': 'path1', 'GD': 'path2', 'GX': 'path3'}.get(variant, 'default_path')
     return jsonify(prompt=False, message=f"Selected Variant Path: {variant_path}")
 
-@app.route('/create_sn_sheet', methods=['POST'])
+@app.route("/create_sn_sheet", methods=["POST"])
 def create_sn_sheet():
-    postfix = request.json.get('postfix')
-    variant_path = request.json.get('variant_path')
-    if not postfix or not variant_path:
-        return jsonify(success=False, message="Please select a postfix and variant.")
-    return jsonify(success=True, message=f"SN Sheet Created with Postfix: {postfix} and Path: {variant_path}")
+    data = request.json  # Get data from the frontend
+    postfix = data.get("postfix")
+    variant = data.get("variant")
+
+    if not postfix or not variant:
+        return jsonify({"message": "Error: Please select both a postfix and a variant."})
+
+    # Logic for creating the SN Creation Sheet
+    result_message = f"SN Sheet Created with Postfix: {postfix} and Variant Path: {variant}"
+    return jsonify({"message": result_message})
 
 @app.route('/create_mapping_sheet', methods=['POST'])
 def create_mapping_sheet():
